@@ -1,0 +1,239 @@
+﻿<Window x:Class="SimpleCalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleCalculator"
+        mc:Ignorable="d"
+        Title="SimpleCalculator" Height="400" Width="600" ResizeMode="NoResize" Background="LightSlateGray">
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+
+        <StackPanel>
+            <Label Content="Emil Kjellemar"
+                   HorizontalContentAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="15"
+                   FontFamily="/Fonts/#Poppins">
+
+            </Label>
+        </StackPanel>
+        
+        
+        <!-- <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="37*" />
+            <ColumnDefinition Width="46*"/>
+            <ColumnDefinition Width="37*"/>
+        </Grid.ColumnDefinitions>
+        -->
+
+
+        <!--Kalkylator app text-->
+
+        <Label Content="Simple Calculator app"
+               Grid.Row="0"
+               VerticalAlignment="Center"
+               Height="50"
+               FontSize="30"
+               Margin="0,50,0,0"
+               HorizontalContentAlignment="Center"
+               FontFamily="/Fonts/#Poppins"  />
+
+
+
+
+
+        <!--Textbox 1 - Första numret !!!-->
+        <TextBox Name="num1" FontSize="20" Text="00"
+                 FontFamily="/Fonts/#Poppins"
+                 BorderBrush="White"
+                 Background="LightSlateGray"
+                 Grid.Row="1"
+                 TextAlignment="Center"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top" 
+                 Height="30" 
+                 Width="100" 
+                 Margin="95,60,0,0" 
+                 TextChanged="num1_TextChanged" 
+                 GotFocus="num1_GotFocus"/>
+
+        <!--Textbox 2 - Andra numret !!!-->
+        <TextBox Name="num2" FontSize="20" Text="00"
+                 FontFamily="/Fonts/#Poppins"
+                 BorderBrush="White"
+                 Background="LightSlateGray"
+                 Grid.Row="1"
+                 TextAlignment="Center"
+                 VerticalAlignment="Top" 
+                 Height="30" 
+                 Width="100" 
+                 Margin="0,60,50,0" 
+                 TextChanged="num2_TextChanged" 
+                 HorizontalAlignment="Center"
+                 GotFocus="num2_GotFocus"/>
+
+        <!--Textbox 3 RESULTAT!!!-->
+        <TextBox x:Name="result_textbox" FontSize="15" Text="Result"
+                 FontFamily="/Fonts/#Poppins"
+                 BorderBrush="White"
+                 Background="LightSlateGray"
+                 Grid.Row="1"
+                 TextAlignment="Center"
+                 Padding="0,3,0,0"
+                 Height="30" 
+                 Width="150" 
+                 Margin="0,0,95,80"   
+                 HorizontalAlignment="Right" 
+                 TextChanged="result_textbox_TextChanged" />
+
+
+        <!--Text för 1a labeln!!!, 
+        Ber användaren skriva in det andra 1a numret-->
+        <Label Content="="
+               Grid.Row="1"
+               Height="40"
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Center"
+               VerticalAlignment="Top"
+               HorizontalAlignment="Center"
+               FontSize="25" 
+               Margin="72,56,0,0" 
+               Padding="0,0,0,0"
+               FontFamily="/Fonts/#Poppins"
+               Width="20"/>
+
+
+
+        <!--Text för 2a labeln!!!, 
+        Ber användaren skriva in det andra numret-->
+
+
+
+        <!--Plus knappen-->
+        <Button Name="btnAddition" Background="MediumPurple"
+                BorderBrush="Black"
+                Width="100"
+                Grid.Row="1"
+                Height="50"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="95,120,0,0"
+                Content="+ Addition" 
+                FontFamily="/Fonts/#Poppins"
+                Click="btnAddition_Click">
+
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Minus knappen-->
+        <Button Name="btnSubtraction" Background="MediumPurple"
+                BorderBrush="Black"
+                Width="100"
+                Grid.Row="1"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"
+                Margin="95,0,0,0"
+                Content="- Subtraction" 
+                FontFamily="/Fonts/#Poppins"
+                Height="50" Click="btnSubtraction_Click" >
+
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Gånger knappen-->
+        <Button Name="btnMultiplication" Background="MediumPurple"
+                BorderBrush="Black"
+                Width="100"
+                Grid.Row="1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Margin="0,120,50,0"
+                Content="X Multiplication" 
+                FontFamily="/Fonts/#Poppins"
+                Height="50" Click="btnMultiplication_Click" >
+
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <!--Dela knappen-->
+        <Button Name="btnDivision" Background="MediumPurple"
+                BorderBrush="Black"
+                Width="100"
+                Grid.Row="1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Margin="0,180,50,0"
+                Content="/ Division" 
+                FontFamily="/Fonts/#Poppins"
+                Height="50" Click="btnDivision_Click">
+
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <!--Modulus knappen-->
+        <Button Name="btnModulus" Background="MediumPurple"
+                BorderBrush="Black"
+                Grid.Row="1"
+                Margin="0,120,95,0"
+                Content="% Modulus" 
+                Width="150"
+                HorizontalAlignment="Right"
+                FontFamily="/Fonts/#Poppins"
+                VerticalAlignment="Top" Height="50" Click="btnModulus_Click" >
+                
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <!--Avsluta program knappen-->
+        <Button Name="btnQuitProgram" Background="MediumPurple"
+                BorderBrush="Black"
+                Grid.Row="1"
+                Margin="0,0,95,0"
+                Content="Quit the program"
+                Width="150"
+                HorizontalAlignment="Right"
+                FontFamily="/Fonts/#Poppins"
+                VerticalAlignment="Bottom" Height="50" Click="btnQuitProgram_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+
+    </Grid>
+
+
+</Window>
